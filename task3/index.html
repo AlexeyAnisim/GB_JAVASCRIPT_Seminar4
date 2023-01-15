@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <script>
+
+        // Используя Math.random() вам необходимо генерировать цифры от 0 до 9, и создать массив 
+        // состоящий из 5 таких элементов
+        // 1. Рассчитать сумму элементов этого массива
+        // 2. Найти минимальное число
+        // 3. Найти есть ли в этом массиве число 3
+
+        let summ = 0;
+        const numbers = [];
+
+        for (let i = 0; i < 5; i++) {
+            numbers[i] = getRandomInRange(0, 9);
+            summ += numbers[i];
+
+            console.log(numbers[i]);
+
+            // if (numbers.indexOf(3) !== -1) {
+            //     console.log(`в массиве есть число 3`);
+            // }
+
+        }
+        console.log(`Сумма элементов ${summ}`);
+        console.log(`минимальный элемент массива - ${Math.min.apply(null, numbers)}`);
+
+        if (numbers.indexOf(3) !== -1) {
+            console.log(`в массиве есть число 3`);
+        } else { `в массиве нет числа 3` }
+
+        function getRandomInRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+    </script>
+</body>
+
+</html>
